@@ -18,11 +18,11 @@ public void set_hospital_list(Hospital h) {
 }
 
 public void display_hospitals() {
-	for(int i=0;i<hospital_list.size();i++)
+	for(int i=0;i<this.hospital_list.size();i++)
 	{   int flags=0;
 		
-		for(int j=0;j<(hospital_list.get(i).getslots()).size();j++) {
-			if((hospital_list.get(i).getslots()).get(j).check_slot_availability()) {
+		for(int j=0;j<(this.hospital_list.get(i).getslots()).size();j++) {
+			if((this.hospital_list.get(i).getslots()).get(j).check_slot_availability()) {
 				flags=1;
 			}}
 			

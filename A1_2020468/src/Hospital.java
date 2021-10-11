@@ -65,7 +65,7 @@ public class Hospital {
 	public  void print_2() {
 		for(int i=0;i<this.slots.size();i++) {
 			if(this.slots.get(i).check_slot_availability())
-				System.out.println("Day: "+this.slots.get(i).getday()+"Vaccine :"+this.slots.get(i).getvaccine()+"Available Qty:"+this.slots.get(i).getquantity());
+				System.out.println("Day: "+this.slots.get(i).getday()+" Vaccine :"+this.slots.get(i).getvaccine()+" Available Qty: "+this.slots.get(i).getquantity());
 		
 	}
 	}
@@ -73,7 +73,7 @@ public class Hospital {
 		int flag=0;
 		for(int i=0;i<this.slots.size();i++) {
 			if(this.slots.get(i).check_slot_availability() && this.slots.get(i).getday()>=date && slots.get(i).getvaccine().equals(name)) 
-				{System.out.println(i+ "-> Day: "+this.slots.get(i).getday()+" Available Qty:"+this.slots.get(i).getquantity()+" Vaccine:"+this.slots.get(i).getvaccine());
+				{System.out.println(i+ " -> Day: "+this.slots.get(i).getday()+" Available Qty:"+this.slots.get(i).getquantity()+" Vaccine:"+this.slots.get(i).getvaccine());
 				flag=1;
 				}
 				

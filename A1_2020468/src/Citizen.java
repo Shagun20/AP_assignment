@@ -25,7 +25,7 @@ public Citizen() {
 
 //Getter function
 public String getname() {
-	 return name;
+	 return this.name;
 	}
 	public int getage() {
 		 return this.age;
@@ -54,9 +54,9 @@ public void querry_7() {
 	if(this.vaccine_name!=null)
 		System.out.println("Vaccine Given:"+this.vaccine_name);
 	if(this.no_of_doses_given!=0)
-		System.out.println("Number of Doses given:"+this.no_of_doses_given);
+		System.out.println("Number of Doses given: "+this.no_of_doses_given);
     if(this.vaccination_status.equals("PARTIALLY VACCINATED")) {
-    	System.out.println("Next Dose due date::"+this.due_date);
+    	System.out.println("Next Dose due date: "+this.due_date);
     }
 }
 	
@@ -77,7 +77,7 @@ public void book_slot(String vaccine_name,int day_chosen,int gap, int dose_req) 
 }
 
 public void print() {
-		System.out.println("Citizen Name: "+this.name+", Age: "+age+", Unique ID: "+ id); 
+		System.out.println("Citizen Name: "+this.name+", Age: "+this.age+", Unique ID: "+ this.id); 
 	}
 	
 }

@@ -44,13 +44,20 @@ public class Hospital {
 		
 	}
 	
-	public  void print_1(int date) {
+	public  int print_1(int date) {
+		int flag=0;
 		for(int i=0;i<this.slots.size();i++) {
 			
-		
+		   
 			if(this.slots.get(i).check_slot_availability() && this.slots.get(i).getday()>=date)
-				System.out.println(i+ "-> Day: "+this.slots.get(i).getday()+"Available Qty:"+this.slots.get(i).getquantity()+" Vaccine:"+this.slots.get(i).getvaccine());
-		}
+				{System.out.println(i+ "-> Day: "+this.slots.get(i).getday()+" Available Qty:"+this.slots.get(i).getquantity()+" Vaccine:"+this.slots.get(i).getvaccine());
+		         flag=1;
+				}
+			
+				}
+		if(flag==0)
+			return 0;//no slots found 
+		return 1;
 	
 		}
 	
@@ -62,12 +69,21 @@ public class Hospital {
 		
 	}
 	}
-	public  void print_3(int date, String name) {
+	public  int print_3(int date, String name) {
+		int flag=0;
 		for(int i=0;i<this.slots.size();i++) {
 			if(this.slots.get(i).check_slot_availability() && this.slots.get(i).getday()>=date && slots.get(i).getvaccine().equals(name)) 
-				System.out.println(i+ "-> Day: "+this.slots.get(i).getday()+"Available Qty:"+this.slots.get(i).getquantity()+" Vaccine:"+this.slots.get(i).getvaccine());
-		
+				{System.out.println(i+ "-> Day: "+this.slots.get(i).getday()+" Available Qty:"+this.slots.get(i).getquantity()+" Vaccine:"+this.slots.get(i).getvaccine());
+				flag=1;
+				}
+				
+				
+			
 	}
+		if(flag==0) {
+			return 0;
+		}
+		return 1;
 	}
 	
 	//public //void set_slots

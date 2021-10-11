@@ -182,7 +182,7 @@ public class Main {
 			int quantity = sc.nextInt();
 			
 			//printing names of vacines
-			System.out.println("Select Vaccine\r\n"+ vaccine_no);
+			System.out.println("Select Vaccine\r\n");
 			for(int j=0;j<vaccines.size();j++) {
 				System.out.println(j+"."+vaccines.get(j).getname());
 			}
@@ -241,7 +241,7 @@ public class Main {
 					System.out.println("No hospital found");
 				else {
 					for(int i=0;i<search_hospitals.size();i++) {
-						System.out.println(search_hospitals.get(i).getid()+search_hospitals.get(i).getname());
+						System.out.println(search_hospitals.get(i).getid()+" "+search_hospitals.get(i).getname());
 					}
 						
 						for(int j=0;j<citizens.size();j++) {
@@ -281,8 +281,7 @@ public class Main {
 							}
 						}
 						
-						System.out.println(c.getname()+" vaccinated with"+ c.get_vaccine());
-						//gap and ddose are set to a value 0 init.
+						
 						
 						c.book_slot((h.getslots().get(slot_no)).getvaccine(), (h.getslots().get(slot_no)).getday(),gap, dose_req);
 						//System.out.print(c.getname()+
@@ -290,6 +289,9 @@ public class Main {
 						
 					     h.getslots().get(slot_no).book_slot();
 					//set hospital slot as booked for one person
+					     
+					     System.out.println(c.getname()+" vaccinated with"+ c.get_vaccine());
+							//gap and ddose are set to a value 0 init.
 					     
 						}
 					
@@ -376,7 +378,7 @@ public class Main {
 		
 		
 		if(n==6) {
-			System.out.println("Enter Hospital Id: ");
+			System.out.print("Enter Hospital Id: ");
 			String hospital_id = sc.next();
 			Hospital h;
 			int flag=0;

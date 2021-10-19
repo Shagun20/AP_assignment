@@ -1,5 +1,3 @@
-
-
 import java.util.ArrayList;
 
 public class Instructor {
@@ -7,6 +5,7 @@ public class Instructor {
 	private int id;
 	private int i=0;
 	private ArrayList<Test> opened_assessments=new ArrayList<Test>();
+	//a list of assessments maintained by instructre
 	//when an assessments are viewed, they are opened.
 	public void view_assessments(Test assessment) {
 		
@@ -21,9 +20,11 @@ public class Instructor {
 		return this.opened_assessments;
 	}
 	public Instructor(int id) {
-		this.id=id;
+		this.id=id;        
 	}
 
+
+	//passing interface object as parameter 
 	public void upload(Lecture l) {
 		l.upload();
 	}

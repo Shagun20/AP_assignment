@@ -75,7 +75,7 @@ public class Student {
 		return this.submitted_assessments;
 	}
 	public void view_grade() {
-		System.out.println("Graded submissions");
+		System.out.println("Graded submissions "+"\n");
 		for(int i=0;i<this.submitted_assessments.size();i++) {
 			
 			if(this.submitted_assessments.get(i).view_grade()!=-1) {
@@ -87,7 +87,7 @@ public class Student {
 		System.out.println("Ungraded submissions");
 			for(int i=0;i<this.submitted_assessments.size();i++) {
 				if(this.submitted_assessments.get(i).view_grade()==-1) 
-					System.out.println("Submission: " +this.submitted_assessments.get(i).file());
+					System.out.println("Submission: " +this.submitted_assessments.get(i).file()+"\n");
 				
 			}
 			

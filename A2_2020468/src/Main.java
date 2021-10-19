@@ -1,5 +1,9 @@
 
+//Shagun Mohta
+//2020468
+
 import java.util.*;
+
 public class Main {
     private static Instructor I0=new Instructor(0);
     private  static Instructor I1=new Instructor(1);
@@ -121,7 +125,8 @@ public class Main {
 					//interface type object
 					assignment.add(t);
 					inst.upload(t);
-					inst.view_assessments(t);
+					I0.view_assessments(t);
+					I1.view_assessments(t);
 					assessments.add(t);
 					//adding to students' pending list
 					S0.add(t,t0);
@@ -140,7 +145,8 @@ public class Main {
 					quiz.add(t);
 					inst.upload(t);
 					assessments.add(t);
-					inst.view_assessments(t);
+					I0.view_assessments(t);
+					I1.view_assessments(t);
 					//quizzes
 					//adding to students' pending list
 					S0.add(t,t0);
@@ -179,7 +185,7 @@ public class Main {
 				 for(int j=0;j<assessments.size();j++) {
 			        	System.out.print("ID :"+j+"\t");
 			        	assessments.get(j).view();
-			        	inst.view_assessments(assessments.get(j));
+			        //	inst.view_assessments(assessments.get(j));
 			        	
 			        }
 				
@@ -191,7 +197,7 @@ public class Main {
 				for(int j=0;j<assessments.size();j++) {
 		        	System.out.print("ID :"+j+"\t");
 		        	assessments.get(j).view();
-		        	inst.view_assessments(assessments.get(j));
+		        	//inst.view_assessments(assessments.get(j));
 		        	
 		        }
 				
@@ -277,19 +283,25 @@ public class Main {
 		        	inst.get_opened_assessments().get(j).view();
 				}
 				
+				if(inst.get_opened_assessments().size()!=0) {
+					System.out.print("Enter id of assignment to close:");
+					int i=sc.nextInt();
+					//assessments.remove(i);
+					sc.nextLine();
+					Test m=assessments.get(i);
+					S0.remove_assessment(m);
+					S1.remove_assessment(m);
+					S2.remove_assessment(m);
+					j=I0.get_opened_assessments().indexOf(m);
+					//j is index of the ass obj in opened_ass
+					I0.close_assessment(j);
+					j=I1.get_opened_assessments().indexOf(m);
+					I1.close_assessment(j);
+					//Close asssignment
+				}
+				else
+					System.out.println("All assignments closed ! ");
 				
-				System.out.print("Enter id of assignment to close:");
-				int i=sc.nextInt();
-				//assessments.remove(i);
-				sc.nextLine();
-				Test m=assessments.get(i);
-				S0.remove_assessment(m);
-				S1.remove_assessment(m);
-				S2.remove_assessment(m);
-				j=inst.get_opened_assessments().indexOf(m);
-				//j is index of the ass obj in opened_ass
-				inst.close_assessment(j);
-				//Close asssignment
 			}
 			
 			if(n==7) {

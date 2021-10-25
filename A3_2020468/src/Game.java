@@ -38,12 +38,14 @@ public class Game {
 			int d=die1.getFaceValue();
 			
 			while(pos==12 && d==2) 
-			{   System.out.println("----------------------------------");
+			{   
+				System.out.println("Player cannot move (>.<) ! ");
+				System.out.println("----------------------------------");
 				System.out.print("(^=^) : Hit enter to roll the dice -");
 				
 		         sc.nextLine();
 		         System.out.println("----------------------------------");
-				System.out.println("Player cannot move (>.<) ! ");
+				
 				die1.roll();
 				d=die1.getFaceValue();
 		

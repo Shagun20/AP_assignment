@@ -43,7 +43,7 @@ public class Game {
 				System.out.println("----------------------------------");
 				System.out.print("(^=^) : Hit enter to roll the dice -");
 				
-		         sc.nextLine();
+		         String n=sc.nextLine();
 		         System.out.println("----------------------------------");
 				
 				die1.roll();

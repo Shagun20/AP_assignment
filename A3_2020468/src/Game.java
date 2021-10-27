@@ -1,7 +1,7 @@
 import java.util.*;
 public class Game {
-	
-    private static int player_positions[]= {0,0,0,1,0,0,1,1,0,0,0,0,0,0};
+									    // 0 1 2 3 4 5 6 7 8 9 10 11 12 13
+    private static int player_positions[]= {0,0,0,0,0,0,1,1,0,0,0,0,0,0};
     //colored 1s added to some floors..
     private static Dice die1 = new Dice(2);
     private static Player p;
@@ -37,13 +37,14 @@ public class Game {
 			die1.roll();
 			int d=die1.getFaceValue();
 			
+			
 			while(pos==12 && d==2) 
-			{   
-				System.out.println("Player cannot move (>.<) ! ");
+				
+			{   System.out.println("Player cannot move (>.<) ! ");
 				System.out.println("----------------------------------");
 				System.out.print("(^=^) : Hit enter to roll the dice -");
 				
-		         String n=sc.nextLine();
+		         String m =sc.nextLine();
 		         System.out.println("----------------------------------");
 				
 				die1.roll();
@@ -110,6 +111,9 @@ public class Game {
 				elevator.print_message(p);
 				elevator.update_points(p);
 				pos=elevator.move_to_floor();
+				empty.print_location(pos);
+				empty.print_message(p);
+				empty.update_points(p);
 				
 			}
 			else if(pos==5){
@@ -118,6 +122,9 @@ public class Game {
 				snake.print_message(p);
 				snake.update_points(p);
 				pos=snake.move_to_floor();
+				empty.print_location(pos);
+				empty.print_message(p);
+				empty.update_points(p);
 			}
 			
 			else if(pos==8) {
@@ -125,6 +132,9 @@ public class Game {
 				ladder.print_message(p);
 				ladder.update_points(p);
 				pos=ladder.move_to_floor();
+				empty.print_location(pos);
+				empty.print_message(p);
+				empty.update_points(p);
 				//ladder
 			}
 			else if(pos==11) {
@@ -133,6 +143,9 @@ public class Game {
 				cobra.print_message(p);
 				cobra.update_points(p);
 				pos=cobra.move_to_floor();
+				empty.print_location(pos);
+				empty.print_message(p);
+				empty.update_points(p);
 				
 			}
 			else {
